@@ -3,6 +3,7 @@ module LanzadorDeFormularios {
 	requires javafx.fxml;
 	requires jasperreports;
 	requires java.sql;
+	requires javafx.graphics;
 	
 	
 	opens aplicacion to javafx.graphics, javafx.fxml;
