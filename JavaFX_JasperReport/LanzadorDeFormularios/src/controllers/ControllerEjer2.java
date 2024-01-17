@@ -90,7 +90,7 @@ public class ControllerEjer2 {
 	@FXML
 	void cancelarPulsado(ActionEvent event) {
 		if (!btnPersonaCalculo.isSelected() && !btnPersonas.isSelected() && !btnSubinformes.isSelected()) {
-
+			
 		} else {
 			btnPersonaCalculo.setSelected(false);
 			btnPersonas.setSelected(false);
