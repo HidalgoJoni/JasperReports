@@ -72,7 +72,6 @@ public class ControllerEjer2 {
 		}
 
 		try {
-			System.out.println(getClass().getResource("/" + ruta));
 			JasperReport report = (JasperReport) JRLoader.loadObject(getClass().getResource("/" + ruta));
 			JasperPrint jprint = JasperFillManager.fillReport(report, new HashMap<>(), connection);
 			JasperViewer viewer = new JasperViewer(jprint, false);

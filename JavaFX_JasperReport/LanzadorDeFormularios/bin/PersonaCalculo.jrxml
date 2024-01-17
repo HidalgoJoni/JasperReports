@@ -3,7 +3,7 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="PersonaCalculo" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="2f6e4db4-9f8f-4ffe-9759-6e1fd142f492">
 	<property name="template.type" value="columnar"/>
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter (2)"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Informe Paises"/>
 	<style name="Title" forecolor="#000000" fontName="Times New Roman" fontSize="50" isBold="false"/>
 	<style name="SubTitle" forecolor="#666666" fontName="Times New Roman" fontSize="18" isBold="false"/>
 	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true"/>
@@ -59,7 +59,7 @@
 			</staticText>
 			<image>
 				<reportElement x="10" y="24" width="77" height="65" uuid="0e18c31b-550b-447c-8aee-fd2ab3d37efd"/>
-				<imageExpression><![CDATA["/resources/img/agenda.png"]]></imageExpression>
+				<imageExpression><![CDATA["resources/img/agenda.png"]]></imageExpression>
 			</image>
 		</band>
 	</title>
@@ -178,7 +178,7 @@ $F{nombre}.substring(0,2).toLowerCase()]]></textFieldExpression>
 			</textField>
 			<image>
 				<reportElement x="17" y="50" width="77" height="65" uuid="526e4d18-71b3-4461-ace0-58efdace7ca8"/>
-				<imageExpression><![CDATA["/resources/img/persona.png"]]></imageExpression>
+				<imageExpression><![CDATA["resources/img/persona.png"]]></imageExpression>
 			</image>
 		</band>
 	</detail>
