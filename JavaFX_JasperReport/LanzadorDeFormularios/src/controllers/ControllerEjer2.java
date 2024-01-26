@@ -68,12 +68,12 @@ public class ControllerEjer2 {
 			ruta = "Agenda.jasper";
 		}
 		if (btnSubinformes.isSelected()) {
-			ruta = "Subinformes.jasper";
+			ruta = "agenda_subinformes.jasper";
 		}
 
 		try {
 			JasperReport report = (JasperReport) JRLoader.loadObject(getClass().getResource("/" + ruta));
-			JasperPrint jprint = JasperFillManager.fillReport(report, new HashMap<>(), connection);
+			JasperPrint jprint = JasperFillManager.fillReport(report, null, connection);
 			JasperViewer viewer = new JasperViewer(jprint, false);
 			viewer.setVisible(true);
 		} catch (Exception e) {
