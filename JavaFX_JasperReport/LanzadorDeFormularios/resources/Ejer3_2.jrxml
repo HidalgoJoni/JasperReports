@@ -1,20 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.20.6.final using JasperReports Library version 6.20.1  -->
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="secciones" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="092e8c0b-5b3a-4301-93d8-bef3e09201d5">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Ejer3_2" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="092e8c0b-5b3a-4301-93d8-bef3e09201d5">
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Informe Paises"/>
 	<queryString language="SQL">
-		<![CDATA[select * from  supermercado.seccion]]>
+		<![CDATA[SELECT s.codigo, s.nombre AS nombre_seccion, p.nombre AS nombre_producto, p.precio, p.stock
+FROM supermercado.seccion s
+LEFT JOIN supermercado.producto p ON s.codigo = p.seccion]]>
 	</queryString>
 	<field name="codigo" class="java.lang.Integer">
 		<property name="com.jaspersoft.studio.field.name" value="codigo"/>
 		<property name="com.jaspersoft.studio.field.label" value="codigo"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="seccion"/>
 	</field>
-	<field name="nombre" class="java.lang.String">
+	<field name="nombre_seccion" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.name" value="nombre"/>
-		<property name="com.jaspersoft.studio.field.label" value="nombre"/>
+		<property name="com.jaspersoft.studio.field.label" value="nombre_seccion"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="seccion"/>
+	</field>
+	<field name="nombre_producto" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="nombre"/>
+		<property name="com.jaspersoft.studio.field.label" value="nombre_producto"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="producto"/>
+	</field>
+	<field name="precio" class="java.lang.Float">
+		<property name="com.jaspersoft.studio.field.name" value="precio"/>
+		<property name="com.jaspersoft.studio.field.label" value="precio"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="producto"/>
+	</field>
+	<field name="stock" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="stock"/>
+		<property name="com.jaspersoft.studio.field.label" value="stock"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="producto"/>
 	</field>
 	<group name="Group1">
 		<groupExpression><![CDATA[$F{codigo}]]></groupExpression>
@@ -28,11 +45,11 @@
 					<text><![CDATA[]]></text>
 				</staticText>
 				<textField>
-					<reportElement mode="Opaque" x="0" y="0" width="555" height="32" forecolor="#FF031C" backcolor="#E6E6E6" uuid="db674b40-44a9-4404-91af-edcfbec15bc9"/>
+					<reportElement mode="Opaque" x="0" y="-2" width="555" height="32" forecolor="#FF031C" backcolor="#E6E6E6" uuid="db674b40-44a9-4404-91af-edcfbec15bc9"/>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
 						<font size="24" isBold="true"/>
 					</textElement>
-					<textFieldExpression><![CDATA[$F{nombre}]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$F{nombre_seccion}]]></textFieldExpression>
 				</textField>
 			</band>
 		</groupHeader>
@@ -41,7 +58,7 @@
 		</groupFooter>
 	</group>
 	<group name="Group2">
-		<groupExpression><![CDATA[$F{nombre}]]></groupExpression>
+		<groupExpression><![CDATA[$F{nombre_seccion}]]></groupExpression>
 		<groupFooter>
 			<band/>
 		</groupFooter>
@@ -50,34 +67,24 @@
 		<band/>
 	</background>
 	<title>
-		<band height="72">
-			<frame>
-				<reportElement mode="Opaque" x="-20" y="-20" width="595" height="92" backcolor="#0DFF05" uuid="56cebe0f-3cb1-41f8-bd59-40db1824f1b3"/>
-				<staticText>
-					<reportElement x="20" y="20" width="545" height="43" forecolor="#FFFFFF" uuid="94ab827d-62cf-492a-9ae9-01c88d3100ce"/>
-					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font size="34" isBold="true"/>
-					</textElement>
-					<text><![CDATA[SECCIONES]]></text>
-				</staticText>
-			</frame>
+		<band height="73">
+			<staticText>
+				<reportElement x="170" y="22" width="230" height="40" uuid="35f0c02f-f3d4-444a-bcf2-8d95a9826b3e"/>
+				<textElement verticalAlignment="Middle">
+					<font size="16"/>
+				</textElement>
+				<text><![CDATA[Secciones del SUPERMERCADO AUCHAN]]></text>
+			</staticText>
 		</band>
 	</title>
 	<pageHeader>
 		<band height="71">
-			<staticText>
-				<reportElement x="160" y="20" width="230" height="40" uuid="35f0c02f-f3d4-444a-bcf2-8d95a9826b3e"/>
-				<textElement verticalAlignment="Middle">
-					<font size="16"/>
-				</textElement>
-				<text><![CDATA[SUPERMERCADO AUCHAN]]></text>
-			</staticText>
 			<image>
-				<reportElement x="-10" y="10" width="160" height="61" uuid="aeb8d357-6e88-443f-8b7f-f7f51053a3b4"/>
+				<reportElement x="0" y="5" width="160" height="61" uuid="aeb8d357-6e88-443f-8b7f-f7f51053a3b4"/>
 				<imageExpression><![CDATA["/resources/img/bannerAuchan.png"]]></imageExpression>
 			</image>
 			<staticText>
-				<reportElement x="410" y="25" width="100" height="30" uuid="cacf5795-4873-4974-b293-4200b0b7bc86"/>
+				<reportElement x="420" y="27" width="100" height="30" uuid="cacf5795-4873-4974-b293-4200b0b7bc86"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<text><![CDATA[GABACHOLANDIA]]></text>
 			</staticText>
@@ -87,7 +94,28 @@
 		<band height="21"/>
 	</columnHeader>
 	<detail>
-		<band height="203"/>
+		<band height="50" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="100" height="20" uuid="1a41a381-046e-4716-a82d-f485935fbffe"/>
+				<textFieldExpression><![CDATA[$F{codigo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="0" width="100" height="20" uuid="629dc76f-68bf-4013-b27e-6d3b2b37c0eb"/>
+				<textFieldExpression><![CDATA[$F{nombre_seccion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="200" y="0" width="100" height="20" uuid="07307f86-969c-4058-b78b-fec2398ff686"/>
+				<textFieldExpression><![CDATA[$F{nombre_producto}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="300" y="0" width="100" height="20" uuid="42241815-1d66-442e-b773-1797bc386e7b"/>
+				<textFieldExpression><![CDATA[$F{precio}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="400" y="0" width="100" height="20" uuid="1fb5f24e-c83a-4e0c-9671-41669b5b4652"/>
+				<textFieldExpression><![CDATA[$F{stock}]]></textFieldExpression>
+			</textField>
+		</band>
 	</detail>
 	<columnFooter>
 		<band/>
