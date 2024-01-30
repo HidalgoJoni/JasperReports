@@ -213,7 +213,7 @@
 							<textField>
 								<reportElement x="0" y="0" width="120" height="30" uuid="784a3205-463f-4fbb-8ad6-75bf21a18e34"/>
 								<textElement textAlignment="Center" verticalAlignment="Middle"/>
-								<textFieldExpression><![CDATA[new DecimalFormat("0.00").format($F{precio})]]></textFieldExpression>
+								<textFieldExpression><![CDATA[new DecimalFormat("0.00").format($F{precio} * 1.21)]]></textFieldExpression>
 							</textField>
 						</jr:detailCell>
 					</jr:column>

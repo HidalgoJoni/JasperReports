@@ -154,46 +154,60 @@
 	<detail>
 		<band height="52">
 			<staticText>
-				<reportElement x="0" y="12" width="100" height="30" uuid="91cf4c9a-90ec-4635-845e-2865a8a1a056"/>
+				<reportElement x="-10" y="11" width="100" height="30" uuid="91cf4c9a-90ec-4635-845e-2865a8a1a056"/>
 				<textElement verticalAlignment="Middle">
 					<font size="12"/>
 				</textElement>
-				<text><![CDATA[Precio x Unidad:]]></text>
+				<text><![CDATA[Precio/unidad:]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="100" y="12" width="70" height="30" uuid="3545bf3a-2a35-4b3a-9559-19754c2dd107"/>
+				<reportElement x="90" y="11" width="70" height="30" uuid="3545bf3a-2a35-4b3a-9559-19754c2dd107"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[new DecimalFormat("0.00").format($F{precio})]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="210" y="11" width="80" height="30" uuid="0aef7d5d-a140-43f3-bb9f-9bc8c7eeea59"/>
+				<reportElement x="180" y="10" width="80" height="30" uuid="0aef7d5d-a140-43f3-bb9f-9bc8c7eeea59"/>
 				<textElement verticalAlignment="Middle">
 					<font size="12"/>
 				</textElement>
 				<text><![CDATA[Stock:]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="290" y="11" width="70" height="30" uuid="6f50b044-58ea-4da0-8903-0106d5b4cdd6"/>
+				<reportElement x="220" y="10" width="70" height="30" uuid="6f50b044-58ea-4da0-8903-0106d5b4cdd6"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{stock}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="400" y="11" width="50" height="30" uuid="225590a2-5476-48c8-bd92-f8f62282a7e1"/>
+				<reportElement x="300" y="10" width="50" height="30" uuid="225590a2-5476-48c8-bd92-f8f62282a7e1"/>
 				<textElement verticalAlignment="Middle">
 					<font size="12"/>
 				</textElement>
 				<text><![CDATA[Total:]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="450" y="10" width="70" height="30" uuid="d530c245-9dca-417a-bc7a-5a941a1f70fa"/>
+				<reportElement x="340" y="10" width="70" height="30" uuid="d530c245-9dca-417a-bc7a-5a941a1f70fa"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[new DecimalFormat("0.00").format($V{Total Unitario})]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="420" y="10" width="50" height="30" uuid="6bee381d-ab64-48be-a4c6-389eaa3b8e45"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Total con IVA:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="480" y="10" width="70" height="30" uuid="7b1b5f94-75fc-4dae-b81b-7683b525d274"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new DecimalFormat("0.00").format($V{Total Unitario}*1.21)]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>
