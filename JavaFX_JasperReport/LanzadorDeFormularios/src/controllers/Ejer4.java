@@ -55,24 +55,29 @@ public class Ejer4 {
 
 	@FXML
 	void lanzarInforme(ActionEvent event) {
-		try {
-            Map<String, Object> parametros = crearParametros();
-            InputStream jasper = Ejer4.class.getResourceAsStream("/Ejer4.jasper");
+	    try {
+	        Map<String, Object> parametros = crearParametros();
+	        InputStream jasper = Ejer4.class.getResourceAsStream("/Ejer4.jasper");
+	        
+	        if (jasper == null) {
+	            throw new IllegalArgumentException("El archivo del reporte no se pudo cargar. Verifique la ruta del archivo.");
+	        }
 
-            JasperReport report = (JasperReport) JRLoader.loadObject(jasper);
-            JasperPrint jprint = JasperFillManager.fillReport(report, parametros, new JREmptyDataSource());
-            JasperViewer viewer = new JasperViewer(jprint, false);
-            viewer.setVisible(true);
+	        JasperReport report = (JasperReport) JRLoader.loadObject(jasper);
+	        JasperPrint jprint = JasperFillManager.fillReport(report, parametros, new JREmptyDataSource());
+	        JasperViewer viewer = new JasperViewer(jprint, false);
+	        viewer.setVisible(true);
 
-        } catch (Exception e) {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setHeaderText(null);
-            alert.setTitle("ERROR");
-            alert.setContentText("Ha ocurrido un error: " + e.getMessage());
-            alert.showAndWait();
-            e.printStackTrace();
-        }
+	    } catch (Exception e) {
+	        Alert alert = new Alert(Alert.AlertType.ERROR);
+	        alert.setHeaderText(null);
+	        alert.setTitle("ERROR");
+	        alert.setContentText("Ha ocurrido un error: " + e.getMessage());
+	        alert.showAndWait();
+	        e.printStackTrace();
+	    }
 	}
+
 
 	private Map<String, Object> crearParametros() {
 		Map<String, Object> parametros = new HashMap<String, Object>(7);
