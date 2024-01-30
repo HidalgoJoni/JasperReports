@@ -40,7 +40,7 @@ public class ControladorEjemploDeLanzador {
     	//llamada con parametros y bbdd
     	//JasperReport report = (JasperReport) JRLoader.loadObject(getClass().getResource("/reports/informe.jasper"));
 		try {
-			JasperReport report = (JasperReport) JRLoader.loadObject(getClass().getResource("informito.jasper"));
+			JasperReport report = (JasperReport) JRLoader.loadObject(getClass().getResource("informe_paises.jasper"));
 	        JasperPrint jprint = JasperFillManager.fillReport(report, null, new JREmptyDataSource());
 	        JasperViewer viewer = new JasperViewer(jprint, false);
 	        viewer.setVisible(true);

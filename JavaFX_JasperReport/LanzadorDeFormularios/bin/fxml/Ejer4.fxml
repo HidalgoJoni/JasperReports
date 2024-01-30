@@ -14,9 +14,9 @@
 
 <BorderPane prefHeight="761.0" prefWidth="721.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.Ejer4">
    <top>
-      <Label text="FORMULARIO MEDICO" textAlignment="CENTER" BorderPane.alignment="CENTER">
+      <Label prefHeight="48.0" prefWidth="491.0" text="FORMULARIO MEDICO" textAlignment="CENTER" BorderPane.alignment="CENTER">
          <font>
-            <Font size="64.0" />
+            <Font size="44.0" />
          </font>
       </Label>
    </top>
@@ -71,37 +71,37 @@
                   <Insets right="15.0" />
                </GridPane.margin>
             </Label>
-            <TextField fx:id="tfNumeroPaciente" GridPane.columnIndex="1">
+            <TextField fx:id="txtNumeroPaciente" GridPane.columnIndex="1">
                <GridPane.margin>
                   <Insets left="15.0" right="15.0" />
                </GridPane.margin>
             </TextField>
-            <TextField fx:id="tfNombrePaciente" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <TextField fx:id="txtNombrePaciente" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <GridPane.margin>
                   <Insets left="15.0" right="15.0" />
                </GridPane.margin>
             </TextField>
-            <TextField fx:id="tfDireccionPaciente" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <TextField fx:id="txtDireccionPaciente" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <GridPane.margin>
                   <Insets left="15.0" right="15.0" />
                </GridPane.margin>
             </TextField>
-            <TextField fx:id="tfCodigoMedico" GridPane.columnIndex="1" GridPane.rowIndex="3">
+            <TextField fx:id="txtCodigoMedico" GridPane.columnIndex="1" GridPane.rowIndex="3">
                <GridPane.margin>
                   <Insets left="15.0" right="15.0" />
                </GridPane.margin>
             </TextField>
-            <TextField fx:id="tfNombreMedico" GridPane.columnIndex="1" GridPane.rowIndex="4">
+            <TextField fx:id="txtNombreMedico" GridPane.columnIndex="1" GridPane.rowIndex="4">
                <GridPane.margin>
                   <Insets left="15.0" right="15.0" />
                </GridPane.margin>
             </TextField>
-            <TextField fx:id="tfEspecialidadMedico" GridPane.columnIndex="1" GridPane.rowIndex="5">
+            <TextField fx:id="txtEspecialidadMedico" GridPane.columnIndex="1" GridPane.rowIndex="5">
                <GridPane.margin>
                   <Insets left="15.0" right="15.0" />
                </GridPane.margin>
             </TextField>
-            <TextArea fx:id="taTratamiento" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
+            <TextArea fx:id="txtAreaTratamiento" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
                <GridPane.margin>
                   <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
                </GridPane.margin>
@@ -112,9 +112,9 @@
    <bottom>
       <FlowPane alignment="CENTER" hgap="100.0" prefHeight="103.0" prefWidth="870.0" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="btnGenerarInforme" mnemonicParsing="false" onAction="#lanza" prefHeight="25.0" prefWidth="121.0" text="Generar Informe" />
-            <Button fx:id="btnLimpiar" mnemonicParsing="false" onAction="#limpiar" text="Limpiar" />
-            <Button fx:id="btnSalir" mnemonicParsing="false" onAction="#salir" prefHeight="25.0" prefWidth="81.0" text="Salir" />
+            <Button fx:id="btnInforme" mnemonicParsing="false" onAction="#lanzarInforme" prefHeight="25.0" prefWidth="150.0" text="Generar Informe" />
+            <Button fx:id="btnLimpiar" mnemonicParsing="false" onAction="#limpiarCampos" text="Limpiar" />
+            <Button fx:id="btnSalir" mnemonicParsing="false" onAction="#cerrarVentana" prefHeight="25.0" prefWidth="81.0" text="Salir" />
          </children>
       </FlowPane>
    </bottom>
