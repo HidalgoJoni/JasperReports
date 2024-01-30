@@ -1,5 +1,9 @@
 package controllers;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 
@@ -28,20 +32,21 @@ public class ControladorEjemploDeLanzador {
 
     @FXML
     void Lanza(ActionEvent event)  {
-    	
-    	//si no necesitamos conexión a bbdd
-    	//ConexionDB con = new ConexionDB();
-    	
-    	// Si no neceistamos parametros
-    	//HashMap<String, Object> parameters = new HashMap<String, Object>();
-        //parameters.put("codigo", 5);
-        //parameters.put("nombre", "xxxx");
-    	
-    	//llamada con parametros y bbdd
-    	//JasperReport report = (JasperReport) JRLoader.loadObject(getClass().getResource("/reports/informe.jasper"));
+    	Connection connection = null;
+
 		try {
-			JasperReport report = (JasperReport) JRLoader.loadObject(getClass().getResource("informe_paises.jasper"));
-	        JasperPrint jprint = JasperFillManager.fillReport(report, null, new JREmptyDataSource());
+			String url = "jdbc:mysql://localhost:3306/agenda";
+			String user = "admin";
+			String password = "dm2";
+
+			connection = DriverManager.getConnection(url, user, password);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		try {
+			JasperReport report = (JasperReport) JRLoader.loadObject(getClass().getResource("/informe_paises.jasper"));
+	        JasperPrint jprint = JasperFillManager.fillReport(report, null, connection);
 	        JasperViewer viewer = new JasperViewer(jprint, false);
 	        viewer.setVisible(true);
 		} catch (Exception e) {
