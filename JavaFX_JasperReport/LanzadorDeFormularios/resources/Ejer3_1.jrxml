@@ -221,7 +221,7 @@
 			</componentElement>
 			<image>
 				<reportElement x="50" y="10" width="124" height="57" uuid="2b7d95a0-5827-48f3-8907-b70ed5732bef"/>
-				<imageExpression><![CDATA["/resources/img/bannerAuchan.png"]]></imageExpression>
+				<imageExpression><![CDATA["resources/img/bannerAuchan.png"]]></imageExpression>
 			</image>
 		</band>
 	</columnHeader>

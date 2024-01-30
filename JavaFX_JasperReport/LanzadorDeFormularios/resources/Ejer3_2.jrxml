@@ -81,7 +81,7 @@ LEFT JOIN supermercado.producto p ON s.codigo = p.seccion]]>
 		<band height="71">
 			<image>
 				<reportElement x="0" y="5" width="160" height="61" uuid="aeb8d357-6e88-443f-8b7f-f7f51053a3b4"/>
-				<imageExpression><![CDATA["/resources/img/bannerAuchan.png"]]></imageExpression>
+				<imageExpression><![CDATA["resources/img/bannerAuchan.png"]]></imageExpression>
 			</image>
 			<staticText>
 				<reportElement x="420" y="27" width="100" height="30" uuid="cacf5795-4873-4974-b293-4200b0b7bc86"/>
